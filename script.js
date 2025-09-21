@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const formMessage = document.getElementById("form-message");
 
   const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbyW6i5v0OlLj8cKiCAYhED-0M8TESiCofnRhMb7DTuct3VthdbCbunmv0BZV-zEislPYQ/exec";
+    "https://script.google.com/macros/s/AKfycbxvU4WCf32d7O88S4J5I1JOrnEp_6FSiRcF3Sxu2MFTO_985n9fl30HJd07aFv19kRYiA/exec";
 
   leadForm.addEventListener("submit", (e) => {
     e.preventDefault();
