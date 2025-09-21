@@ -26,23 +26,28 @@
         height: 100vh;
         margin: 0;
         text-align: center;
+        padding: 15px; /* Added padding for small screens */
       }
       .container {
         padding: 20px;
+        max-width: 800px; /* Set a max-width for very large screens */
       }
       h1 {
         color: var(--primary-gold);
-        font-size: 2.5rem;
+        font-size: 1.8rem; /* Adjusted for mobile */
         margin-bottom: 1rem;
       }
       p {
-        font-size: 1.2rem;
+        font-size: 1.1rem; /* Slightly smaller for better mobile readability */
         line-height: 1.7;
       }
-      /* Style for the new product name */
+      /* Style for the product name */
       .product-name {
-        font-size: 10rem;
+        font-size: 20vw; /* Responsive font size based on viewport width */
+        line-height: 1.1; /* Adjust line-height for large text */
         margin: 1.5rem 0;
+        font-weight: 800;
+        color: var(--text-light);
       }
       a {
         display: inline-block;
@@ -59,13 +64,26 @@
         border-color: var(--primary-gold);
         color: #000;
       }
+
+      /* --- Media Query for Larger Screens (Tablets and Desktops) --- */
+      @media (min-width: 768px) {
+        h1 {
+          font-size: 2.5rem; /* Restore original size on larger screens */
+        }
+        p {
+          font-size: 1.2rem; /* Restore original size */
+        }
+        .product-name {
+          font-size: 10rem; /* Cap the font size at a maximum */
+        }
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <h1>✅ شكراً لك، تم استلام طلبك بنجاح!</h1>
 
-      <p class="product-name"><strong>STRONGEST</strong></p>
+      <p class="product-name">STRONGEST</p>
 
       <p>
         سيتصل بك أحد مندوبينا خلال الـ 24 ساعة القادمة لتأكيد الطلب وتفاصيل
