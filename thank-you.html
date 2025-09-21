@@ -23,28 +23,28 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        min-height: 100vh; /* Use min-height for better compatibility */
         margin: 0;
         text-align: center;
-        padding: 15px; /* Added padding for small screens */
+        padding: 15px;
+        overflow-x: hidden; /* **FIX: Prevents all horizontal scrolling** */
       }
       .container {
         padding: 20px;
-        max-width: 800px; /* Set a max-width for very large screens */
+        max-width: 800px;
       }
       h1 {
         color: var(--primary-gold);
-        font-size: 1.8rem; /* Adjusted for mobile */
+        font-size: 1.8rem;
         margin-bottom: 1rem;
       }
       p {
-        font-size: 1.1rem; /* Slightly smaller for better mobile readability */
+        font-size: 1.1rem;
         line-height: 1.7;
       }
-      /* Style for the product name */
       .product-name {
-        font-size: 20vw; /* Responsive font size based on viewport width */
-        line-height: 1.1; /* Adjust line-height for large text */
+        font-size: 15vw; /* **FIX: Reduced size to better fit screens** */
+        line-height: 1.1;
         margin: 1.5rem 0;
         font-weight: 800;
         color: var(--text-light);
@@ -68,13 +68,13 @@
       /* --- Media Query for Larger Screens (Tablets and Desktops) --- */
       @media (min-width: 768px) {
         h1 {
-          font-size: 2.5rem; /* Restore original size on larger screens */
+          font-size: 2.5rem;
         }
         p {
-          font-size: 1.2rem; /* Restore original size */
+          font-size: 1.2rem;
         }
         .product-name {
-          font-size: 10rem; /* Cap the font size at a maximum */
+          font-size: 10rem;
         }
       }
     </style>
