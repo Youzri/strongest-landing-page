@@ -1,0 +1,383 @@
+/* ---
+Junior Dev Notes:
+To make the offer image blend better, we've updated `.offer-image` styles.
+We've added a solid background matching `--background-card`, a subtle border, and a shadow
+to integrate it more smoothly into the dark theme.
+--- */
+
+/* ============================================= */
+/* --- Global Variables & Reset --- */
+/* ============================================= */
+:root {
+  /* Elegant Dark Palette */
+  --primary-gold: #cb1414; /* A rich, elegant red for buttons and highlights */
+  --background-dark: #1c1c1e; /* A deep charcoal for the main background */
+  --background-card: #2c2c2e; /* A slightly lighter grey for cards and sections */
+  --text-light: #f1f1f1; /* Off-white for primary text for better readability */
+  --text-muted: #a0a0a0; /* A muted grey for sub-headlines and secondary text */
+  --border-color: #444444; /* A subtle border color */
+  --border-radius: 8px;
+  --container-width: 1140px;
+}
+
+/* A simple CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Tajawal", sans-serif;
+  line-height: 1.7;
+  color: var(--text-light);
+  background-color: var(--background-dark);
+  direction: rtl;
+  text-align: right;
+}
+
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================= */
+/* --- Reusable Components & Typography --- */
+/* ============================================= */
+.section-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.cta-button,
+.submit-button {
+  display: inline-block;
+  width: 100%;
+  padding: 15px 30px;
+  background-color: var(--primary-gold);
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem;
+}
+
+.cta-button:hover,
+.submit-button:hover {
+  background-color: #e0b84f;
+  transform: translateY(-2px);
+}
+
+/* General Section Styling */
+section {
+  padding: 50px 0;
+}
+
+/* ============================================= */
+/* --- Header & Footer --- */
+/* ============================================= */
+.main-header {
+  background-color: var(--background-card);
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-gold);
+}
+
+.main-footer {
+  background-color: #111;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+}
+
+.main-footer p {
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================= */
+/* --- Page Sections --- */
+/* ============================================= */
+
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.hero-headline {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--text-light);
+}
+.hero-subheadline {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+.hero-image {
+  margin: 2rem auto;
+  border-radius: var(--border-radius);
+  max-width: 300px;
+}
+
+/* Problem Section */
+.problem-section {
+  background-color: var(--background-card);
+}
+.problem-icon {
+  margin: 0 auto 1.5rem auto;
+  border-radius: var(--border-radius);
+}
+.problem-section ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+.problem-section ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+.problem-section ul li::before {
+  content: "✓";
+  color: var(--primary-gold);
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+.problem-agitation {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Solution Section */
+.solution-section .benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+.benefit-item {
+  background-color: var(--background-card);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+.benefit-item h4 {
+  color: var(--primary-gold);
+  margin-bottom: 0.5rem;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: var(--background-dark);
+}
+.testimonial-card {
+  background-color: var(--background-card);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-top: 4px solid var(--primary-gold);
+}
+.testimonial-author {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+.stars {
+  color: var(--primary-gold);
+}
+
+/* Offer & Order Section */
+.offer-order-section {
+  background-color: var(--background-dark);
+}
+.offer-box,
+.order-form-box {
+  text-align: center;
+}
+.offer-image {
+  margin: 1rem auto;
+  max-width: 300px;
+  /* NEW: Styles to help the image blend better */
+  background-color: var(--background-card); /* Add a dark background */
+  padding: 15px; /* Add some padding around the image */
+  border-radius: var(--border-radius); /* Ensure rounded corners */
+  border: 1px solid var(--border-color); /* Subtle border */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  /* END NEW STYLES */
+}
+.price-box {
+  background-color: var(--background-card);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+  border: 2px dashed var(--primary-gold);
+}
+.old-price {
+  font-size: 1.5rem;
+  text-decoration: line-through;
+  color: var(--text-muted);
+  display: block;
+}
+.new-price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-gold);
+  display: block;
+}
+.order-form-box {
+  background-color: var(--background-card);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  margin-top: 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: var(--text-light);
+}
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  background-color: #333;
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-family: "Tajawal", sans-serif;
+  font-size: 1rem;
+  direction: rtl;
+}
+.form-group input::placeholder {
+  color: var(--text-muted);
+}
+.form-message {
+  margin-top: 1rem;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  display: none;
+}
+.form-message.success {
+  background-color: #28a745;
+  color: white;
+}
+.form-message.error {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* ============================================= */
+/* --- Media Queries for Larger Screens --- */
+/* ============================================= */
+
+/* --- Tablet (e.g., iPad) --- */
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+  .cta-button,
+  .submit-button {
+    width: auto;
+    max-width: 400px;
+  }
+  .solution-section .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .solution-section .cta-button {
+    display: block;
+    margin: 2rem auto 0 auto;
+  }
+  .testimonials-section .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .testimonials-section .section-title {
+    grid-column: 1 / -1;
+  }
+}
+
+/* --- Desktop --- */
+@media (min-width: 1024px) {
+  body {
+    font-size: 18px;
+  }
+  .hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: right;
+  }
+  .hero-text-content {
+    flex: 1;
+    padding-left: 3rem;
+  }
+  .hero-image-wrapper {
+    flex-basis: 55%;
+  }
+  .hero-image {
+    max-width: 450px;
+  }
+  .hero-headline {
+    font-size: 3rem;
+  }
+  .problem-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 2rem 0;
+  }
+  .problem-icon {
+    flex-basis: 40%;
+    margin: 0;
+    max-width: 500px;
+  }
+  .problem-section ul {
+    flex-basis: 55%;
+  }
+  .problem-section ul li {
+    font-size: 1.25rem;
+  }
+  .offer-order-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+  .order-form-box {
+    margin-top: 0;
+    position: sticky;
+    top: 20px;
+  }
+}
