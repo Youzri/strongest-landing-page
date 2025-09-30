@@ -3,8 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- Capture URL Source Parameter ---
   // ===================================================
   try {
+    console.log("Checking URL. The search string is:", window.location.search);
     const urlParams = new URLSearchParams(window.location.search);
-    const sourceCode = urlParams.get("source");
+    const sourceCode = urlParams.get("Source");
+    console.log("Captured source code:", sourceCode);
     const sourceInput = document.getElementById("source");
     if (sourceInput) {
       if (sourceCode) {
@@ -39,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const submitButton = leadForm.querySelector(".submit-button");
   const formMessage = document.getElementById("form-message");
   const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbxvU4WCf32d7O88S4J5I1JOrnEp_6FSiRcF3Sxu2MFTO_985n9fl30HJd07aFv19kRYiA/exec";
+    "https://script.google.com/macros/s/AKfycbxi3eLx3QC_KCDlJ-pkrR-a8bk1sSXJ46qtq2bVXjMql4Bn9zgHOlvAgskzS2V8Ic8-9g/exec";
 
   leadForm.addEventListener("submit", (e) => {
     e.preventDefault();
